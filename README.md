@@ -6,3 +6,9 @@
 * Serve static files
 * Round Robin Load balancing for multiple target routes
 * Retries different target if there's a downtime on a target
+
+### How to run:
+```bash
+go build -o reverse-proxy-go main.go
+./reverse-proxy-go config.json
+```
