@@ -1,5 +1,7 @@
 <h1 style="text-align: center; color: aqua"> Reverse Proxy GO</h1>
 
+    A reverse proxy that serves static files and targets based on defined routes
+
 ### Features:
 * Serve static files
 * Round Robin Load balancing for multiple target routes

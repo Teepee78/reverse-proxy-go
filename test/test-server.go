@@ -17,7 +17,7 @@ type Response struct {
 }
 
 // Function to handle the /hello route
-func helloHandler(w http.ResponseWriter, r *http.Request, port string) {
+func helloHandler(w http.ResponseWriter, port string) {
 	response := Response{
 		Message: "Hello, world!",
 		Port:    port,
@@ -34,7 +34,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request, port string) {
 }
 
 // Function to handle the /goodbye route
-func goodbyeHandler(w http.ResponseWriter, r *http.Request, port string) {
+func goodbyeHandler(w http.ResponseWriter, port string) {
 	response := Response{
 		Message: "Goodbye, see you later!",
 		Port:    port,
@@ -59,10 +59,10 @@ func startServer(port string, wg *sync.WaitGroup) {
 
 	// Handle routes
 	mux.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
-		helloHandler(w, r, port)
+		helloHandler(w, port)
 	})
 	mux.HandleFunc("/goodbye", func(w http.ResponseWriter, r *http.Request) {
-		goodbyeHandler(w, r, port)
+		goodbyeHandler(w, port)
 	})
 
 	// Start the server on the specified port
