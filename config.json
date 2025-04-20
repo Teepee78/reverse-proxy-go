@@ -1,0 +1,10 @@
+{
+  "port": 80,
+  "staticDir": "./static",
+  "routes": [
+    {
+      "path": "/api",
+      "targets": ["http://localhost:3000", "http://localhost:3001"]
+    }
+  ]
+}
